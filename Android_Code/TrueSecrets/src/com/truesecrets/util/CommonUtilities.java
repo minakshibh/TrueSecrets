@@ -9,6 +9,8 @@ import java.io.InputStream;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.os.Environment;
 import android.util.Log;
 
@@ -64,5 +66,16 @@ public class CommonUtilities {
 	    }
 	    
 	    return tempFile;
+	}
+	public static int getCodeVersion(Context context )
+	{
+		int versionCode=9;
+		 try {
+	            PackageInfo pInfo = context.getPackageManager().getPackageInfo(context.getPackageName(), 0);
+	            versionCode = pInfo.versionCode;
+	        } catch (PackageManager.NameNotFoundException e) {
+	            e.printStackTrace();
+	        }
+		return versionCode;
 	}
 }

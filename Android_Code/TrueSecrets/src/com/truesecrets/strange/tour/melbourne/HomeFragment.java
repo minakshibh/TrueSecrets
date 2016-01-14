@@ -38,9 +38,12 @@ import android.view.ViewGroup;
 import android.view.ViewGroup.LayoutParams;
 import android.view.Window;
 import android.view.WindowManager;
+import android.view.animation.AlphaAnimation;
+import android.webkit.WebView.FindListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.TextView.BufferType;
@@ -65,7 +68,8 @@ public class HomeFragment extends Fragment {
 	int flag = 0;
 	TextView welcomeString, welcomeString_a, txtEnjoy,imgSecret1txt,imgSecret2txt,imgSecret3txt,imgSecret4txt,imgSecret5txt,imgSecret6txt,imgSecret7txt;
 	static ImageView imgSecret1;
-	static ImageView imgSecret2, imgSecret3,imgSecret4,imgSecret5, imgSecret6, imgSecret7;	 
+	static ImageView imgSecret2, imgSecret3,imgSecret4,imgSecret5, imgSecret6, imgSecret7;	
+	public static LinearLayout laySecret1, laySecret2, laySecret4, laySecret5, laySecret6, laySecret7;
 	static public ImageView imgplay;
     Bitmap bmp;
     RelativeLayout welcomeLayout;
@@ -79,6 +83,7 @@ public class HomeFragment extends Fragment {
 	String mobile;
     private static final String TAG = "com.truesecrets.purchase.inappbilling";
     IabHelper mHelper;
+    int count=0;
 //	static final String ITEM_SKU = "com.truesecrets.tour.melbourne.click";
 	
     
@@ -94,6 +99,9 @@ public class HomeFragment extends Fragment {
     public HomeFragment()
     {
     
+    	
+    	
+    	
     }
     public HomeFragment(Context context)
     {
@@ -162,6 +170,15 @@ public class HomeFragment extends Fragment {
      imgSecret5 = (ImageView)view.findViewById(R.id.imgSecret5);     
      imgSecret6 = (ImageView)view.findViewById(R.id.imgSecret6);      
 	 imgSecret7 = (ImageView)view.findViewById(R.id.imgSecret7);
+	 
+	 laySecret1=(LinearLayout)view.findViewById(R.id.laySecret1);
+	 laySecret2=(LinearLayout)view.findViewById(R.id.laySecret2);
+	 //laySecret3=(LinearLayout)view.findViewById(R.id.laySecret3);
+	 laySecret4=(LinearLayout)view.findViewById(R.id.laySecret4);
+	 laySecret5=(LinearLayout)view.findViewById(R.id.laySecret5);
+	 laySecret6=(LinearLayout)view.findViewById(R.id.laySecret6);
+	 laySecret7=(LinearLayout)view.findViewById(R.id.laySecret7);
+	
 	 
 	
 	 backgroundColorChange();//set disable all secrets images
@@ -367,8 +384,8 @@ public class HomeFragment extends Fragment {
 				
 					try{
 						
-					
-					ZipResourceFile expansionFile = APKExpansionSupport.getAPKExpansionZipFile(ctx, 7, 0);
+					int versionCode=CommonUtilities.getCodeVersion(ctx);
+					ZipResourceFile expansionFile = APKExpansionSupport.getAPKExpansionZipFile(ctx, versionCode, 0);
 					
 					InputStream fileStream = expansionFile.getInputStream(ctx.getResources().getString(R.string.expansionFilesPrefix)+"/opening_monologue.mp3");
 					Log.e("file","="+fileStream);
@@ -930,29 +947,39 @@ public class HomeFragment extends Fragment {
 		
 		if(pref.getBoolean("isPurchased", false)==false)
 		 {
-			 imgSecret1.getBackground().setAlpha(80); 
-			 imgSecret2.getBackground().setAlpha(80); 
-			 imgSecret4.getBackground().setAlpha(80); 
-			 imgSecret5.getBackground().setAlpha(80); 
-			 imgSecret6.getBackground().setAlpha(80); 
-			 imgSecret7.getBackground().setAlpha(80); 
+			//laySecret1.setBackgroundResource(R.drawable.body_bg);
+			 AlphaAnimation alpha = new AlphaAnimation(0.5F, 0.5F);
+             alpha.setDuration(0); // Make animation instant
+             alpha.setFillAfter(true); // Tell it to persist after the animation ends
+             laySecret1.startAnimation(alpha);
+			laySecret2.startAnimation(alpha);
+			laySecret4.startAnimation(alpha);
+			laySecret5.startAnimation(alpha);
+			laySecret6.startAnimation(alpha);
+			laySecret7.startAnimation(alpha);
+			 
 			 
 		 }
 		 else{
-			 imgSecret1.getBackground().setAlpha(255); 
-			 imgSecret2.getBackground().setAlpha(255); 
-			 imgSecret4.getBackground().setAlpha(255); 
-			 imgSecret5.getBackground().setAlpha(255); 
-			 imgSecret6.getBackground().setAlpha(255);  
-			 imgSecret7.getBackground().setAlpha(255);
+			
+			 AlphaAnimation alpha = new AlphaAnimation(1F, 1F);
+             alpha.setDuration(0); // Make animation instant
+             alpha.setFillAfter(true); // Tell it to persist after the animation ends
+             laySecret1.startAnimation(alpha);
+			laySecret2.startAnimation(alpha);
+			laySecret4.startAnimation(alpha);
+			laySecret5.startAnimation(alpha);
+			laySecret6.startAnimation(alpha);
+			laySecret7.startAnimation(alpha);
 		 }
     }
 	
 	@Override
 	public void onResume() {
 		// TODO Auto-generated method stub
-		
+		pref.edit().putBoolean("isPurchased", true).commit();
 		backgroundColorChange();
+		
 		System.err.println("onResume home fragment");
 		super.onResume();
 	}

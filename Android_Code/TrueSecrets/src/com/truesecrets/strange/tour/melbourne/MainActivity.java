@@ -1024,6 +1024,10 @@ public View.OnTouchListener secrettouchListner = new View.OnTouchListener() {
 									{
 										str_couponcode=CommonUtilities.ITEM_ts1900;
 										}
+									else if(CouponChecker.coupon_productid.equalsIgnoreCase("TS000"))
+									{
+										str_couponcode=CommonUtilities.ITEM_ts950;
+									}
 									
 									
 									Log.e("str_couponcode", str_couponcode);

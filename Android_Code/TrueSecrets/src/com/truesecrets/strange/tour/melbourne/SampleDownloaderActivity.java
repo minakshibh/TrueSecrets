@@ -23,7 +23,10 @@ import java.util.zip.CRC32;
 
 import android.app.Activity;
 import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -38,6 +41,8 @@ import android.widget.TextView;
 
 import com.android.vending.expansion.zipfile.ZipResourceFile;
 import com.android.vending.expansion.zipfile.ZipResourceFile.ZipEntryRO;
+import com.google.ads.conversiontracking.AdWordsAutomatedUsageReporter;
+import com.google.ads.conversiontracking.AdWordsConversionReporter;
 import com.google.android.vending.expansion.downloader.Constants;
 import com.google.android.vending.expansion.downloader.DownloadProgressInfo;
 import com.google.android.vending.expansion.downloader.DownloaderClientMarshaller;
@@ -56,6 +61,7 @@ import com.truesecrets.strange.tour.melbourne.R;
  */
 public class SampleDownloaderActivity extends Activity implements IDownloaderClient {
     private static final String LOG_TAG = "LVLDownloader";
+    public static String GoogleAdwordsTrackingId="1012268842";
     private ProgressBar mPB;
 
     private TextView mStatusText;
@@ -120,7 +126,7 @@ public class SampleDownloaderActivity extends Activity implements IDownloaderCli
     static final XAPKFile[] xAPKS = {
             new XAPKFile(
                     true, // true signifies a main file
-                   7, // the version of the APK that the file was uploaded
+                   9, // the version of the APK that the file was uploaded
                        // against
                    	  71619507L
                    // 75529644L
@@ -404,8 +410,13 @@ public class SampleDownloaderActivity extends Activity implements IDownloaderCli
         /**
          * Both downloading and validation make use of the "download" UI
          */
+      //  [ACTConversionReporter reportWithConversionID:@"1012268842" label:@"4lVHCOqSr2EQqv7X4gM" value:@"0.00" 
+       
         initializeDownloadUI();
-
+        AdWordsConversionReporter.reportWithConversionId(this.getApplicationContext(),
+        		GoogleAdwordsTrackingId, "4lVHCOqSr2EQqv7X4gM", "0", true);
+     // Enable automated usage reporting.
+        AdWordsAutomatedUsageReporter.enableAutomatedUsageReporting(this.getApplicationContext(), GoogleAdwordsTrackingId);
         /**
          * Before we do anything, are the files we expect already here and
          * delivered (presumably by Market) For free titles, this is probably
@@ -620,5 +631,31 @@ public class SampleDownloaderActivity extends Activity implements IDownloaderCli
         this.mCancelValidation = true;
         super.onDestroy();
     }
+  
+  
+    	final String LAST_RECORDED_VERSION_KEY = "last_recorded_app_version";
+
+    	public void onResume() {
+    	  try {
+    		SharedPreferences  mPrefs = this.getSharedPreferences("mypref", Context.MODE_APPEND);
+    	    PackageInfo packageInfo = getPackageManager().getPackageInfo(getPackageName(), 0);
+    	    int currentAppVersion = packageInfo.versionCode;
+    	    int lastRecordedAppVersion = mPrefs.getInt(LAST_RECORDED_VERSION_KEY, -1);
+    	    if (currentAppVersion > lastRecordedAppVersion) {
+    	      AdWordsConversionReporter.reportWithConversionId(
+    	          this.getApplicationContext(),
+    	          "1038185027",
+    	          "aqUCHIerhAgQw-SF7wM",
+    	          "0",  // The value of your conversion; can be modified to a transaction-specific value.
+    	          true);
+    	      SharedPreferences.Editor editor = mPrefs.edit();
+    	      editor.putInt(LAST_RECORDED_VERSION_KEY, currentAppVersion);
+    	      editor.commit();
+    	    }
+    	  } catch (NameNotFoundException e) {
+    	    Log.w("MyApp", e.getMessage());
+    	  }
+    	}
+    
 
 }

@@ -12,6 +12,8 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.content.res.AssetManager;
 import android.content.res.Resources;
 import android.graphics.Color;
@@ -814,9 +816,10 @@ public class SecretFragment extends Fragment implements AnimationListener {
 	}
 
 	public void getFile(int trigger, String fileName) {
+		int versionCode=CommonUtilities.getCodeVersion(ctx);
 		try {
 			ZipResourceFile expansionFile = APKExpansionSupport
-					.getAPKExpansionZipFile(ctx, 7, 0);
+					.getAPKExpansionZipFile(ctx, versionCode, 0);
 
 			InputStream fileStream = expansionFile
 					.getInputStream(ctx.getResources().getString(R.string.expansionFilesPrefix)+"/"

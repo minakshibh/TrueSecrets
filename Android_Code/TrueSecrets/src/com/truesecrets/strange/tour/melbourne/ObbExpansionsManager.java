@@ -45,7 +45,7 @@ public class ObbExpansionsManager {
         packageName = context.getPackageName();
         Log.d(TAG, "Package name = " + packageName);
 
-        int versionCode = 7;
+        int versionCode = 9;
         try {
             PackageInfo pInfo = context.getPackageManager().getPackageInfo(context.getPackageName(), 0);
             versionCode = pInfo.versionCode;
@@ -159,7 +159,7 @@ public class ObbExpansionsManager {
     }
 
     public static int getAppVersionCode(Context context) {
-        int versionCode =7;
+        int versionCode =9;
         try {
             PackageInfo pInfo = context.getPackageManager().getPackageInfo(context.getPackageName(), 0);
             versionCode = pInfo.versionCode;

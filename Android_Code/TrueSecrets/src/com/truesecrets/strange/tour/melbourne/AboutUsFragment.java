@@ -67,7 +67,7 @@ public class AboutUsFragment extends Fragment implements AnimationListener{
 	Button submitbtn,couponbtn,okbtn, okcouponbtn;
 	EditText nameedittxt,emailedittxt;
 	static String imei,  mobile, url,  android_coupon, ios_coupon, android_expiry, ios_expiry, discountTxt;
-	static SharedPreferences pref;
+	//static SharedPreferences pref;
 	Handler myOffMainThreadHandler;
 	
 	// Animation
@@ -127,7 +127,7 @@ public class AboutUsFragment extends Fragment implements AnimationListener{
 	submitbtn =(Button)view.findViewById(R.id.submitbtn);
 	okbtn =(Button)view.findViewById(R.id.okbtn);
 	okcouponbtn=(Button)view.findViewById(R.id.okcouponbtn);
-	pref =ctx.getSharedPreferences("mypref", Context.MODE_APPEND);
+	//pref =ctx.getSharedPreferences("mypref", 1);
 	isCouponVisible=true;
 //    inVisible=false;
 	
@@ -160,8 +160,9 @@ public class AboutUsFragment extends Fragment implements AnimationListener{
 	//  if(sharedPref.getString("Coupon","").equals("invisible") && MainActivity.couponVar<3){
     	googletxt.setVisibility(View.VISIBLE);
     	coupondiscounttxt.setVisibility(View.VISIBLE);    	
-    	googletxt.setText("Coupon code : "+android_coupon+"\niOS Coupon : "+ios_coupon);
-    	coupondiscounttxt.setText(discountTxt);
+    	googletxt.setText("Coupon code : "+android_coupon);//\niOS Coupon : "+ios_coupon);
+    	//coupondiscounttxt.setText(discountTxt);
+    	coupondiscounttxt.setVisibility(View.GONE);
     }/*else if(){
     	
     }*/
@@ -188,6 +189,7 @@ public class AboutUsFragment extends Fragment implements AnimationListener{
 	 
      anyproblemsnum.setOnClickListener(listner);
 	 anyproblemsemail.setOnClickListener(listner);
+	 
 	 
 	 StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
 	 StrictMode.setThreadPolicy(policy); 
@@ -375,7 +377,7 @@ public class AboutUsFragment extends Fragment implements AnimationListener{
 	    couponbtn.setOnClickListener(new View.OnClickListener() {		
 			@Override
 			public void onClick(View v) {	
-				if(pref.getBoolean("isPurchased", false)==false)
+				if(HomeFragment.pref.getBoolean("isPurchased", false)==false)
 				{
 					MainActivity.showPaymentDialog();
 									
@@ -404,7 +406,8 @@ public class AboutUsFragment extends Fragment implements AnimationListener{
 							discountTxt=discountTxt+"Valid for Android Until: "+android_expiry+"\n"+"Valid for iOS Until: "+ios_expiry;
 						}				
 						
-						googletxt.setText("Coupon code: "+android_coupon+"\niOS Coupon : "+ios_coupon);
+						googletxt.setText("Coupon code: "+android_coupon);
+								//\niOS Coupon : "+ios_coupon);
 						coupondiscounttxt.setText(discountTxt);
 						changeUi();				   
 						}else{
