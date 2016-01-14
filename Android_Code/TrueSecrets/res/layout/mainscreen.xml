@@ -129,7 +129,8 @@
     			android:layout_width="fill_parent"
     			android:layout_height="wrap_content"
     			android:orientation="horizontal"	
-    			android:layout_marginTop="10dp"	    
+    			android:layout_marginTop="20dp"	 
+    			android:id="@+id/laySecret1"
     			>
 	      
 				<ImageView
@@ -139,8 +140,8 @@
     			    android:layout_marginRight="10dp"    
 				    android:adjustViewBounds="true"				    
 				    android:clickable="true"
-				   
-				    android:background="@drawable/image1"
+				   	android:src="@drawable/image1"
+				    android:background="@drawable/roundedimg"
 				    android:layout_gravity="center" 	
 				    android:layout_weight="0.57"	 />
 				
@@ -159,7 +160,8 @@
 			</LinearLayout>   
 	
 			
-			 <LinearLayout			    
+			 <LinearLayout
+			     android:id="@+id/laySecret2"			    
     			android:layout_width="fill_parent"
     			android:layout_height="wrap_content"
     			android:orientation="horizontal"	
@@ -172,7 +174,8 @@
 				    android:layout_height="wrap_content"   			     
     			    android:layout_marginRight="10dp"				   
 				    android:adjustViewBounds="true"
-				    android:background="@drawable/image2"
+					android:src="@drawable/image2"
+				    android:background="@drawable/roundedimg"
 				    android:clickable="true"
 				    
 				    android:layout_gravity="center" 	
@@ -194,7 +197,8 @@
 			</LinearLayout>   
 			
 			
-			 <LinearLayout			    
+			 <LinearLayout		
+			     android:id="@+id/laySecret3"	    
     			android:layout_width="fill_parent"
     			android:layout_height="wrap_content"
     			android:orientation="horizontal"
@@ -209,7 +213,8 @@
     				android:clickable="true"
     				android:layout_weight="0.57" 
     			
-    				android:background="@drawable/image3"  				
+    					android:src="@drawable/image3"
+				    android:background="@drawable/roundedimg"				
     			    android:layout_marginRight="10dp"
     			   />
 
@@ -231,6 +236,7 @@
     			android:layout_height="wrap_content"
     			android:orientation="horizontal"
     			android:layout_marginTop="40dp"
+    			android:id="@+id/laySecret4"
     			>
 	      
 				<ImageView
@@ -239,8 +245,9 @@
     				android:layout_height="wrap_content"       				  		
     				android:layout_gravity="center" 	
     				android:clickable="true"
-    				
-    				android:background="@drawable/image4"
+    				android:background="@drawable/roundedimg"		
+    				android:src="@drawable/image4"
+				    
     			    android:layout_marginRight="10dp"
     			    android:layout_weight="0.57" />		
 				
@@ -262,6 +269,7 @@
     			android:layout_height="wrap_content"
     			android:orientation="horizontal"
     			android:layout_marginTop="40dp"
+    			android:id="@+id/laySecret5"
     			>
 	      
 				<ImageView
@@ -271,7 +279,8 @@
     				android:layout_gravity="center" 	
     				android:adjustViewBounds="true"	
     				android:clickable="true"
-    				android:background="@drawable/image5"
+    				android:src="@drawable/image5"
+				    android:background="@drawable/roundedimg"
     			    android:layout_marginRight="10dp"
     			    android:layout_weight="0.57" />		
 				
@@ -293,6 +302,7 @@
     			android:layout_height="wrap_content"
     			android:orientation="horizontal"
     			android:layout_marginTop="40dp"
+    			android:id="@+id/laySecret6"
     			>
 	      
 				<ImageView
@@ -302,7 +312,8 @@
     				android:layout_gravity="center" 	
     				android:adjustViewBounds="true"	
     				android:clickable="true"
-    				android:background="@drawable/image6"
+    				android:src="@drawable/image6"
+				    android:background="@drawable/roundedimg"
     			    android:layout_marginRight="10dp"
     			    android:layout_weight="0.57" />		
 				
@@ -324,6 +335,7 @@
     			android:layout_height="wrap_content"
     			android:orientation="horizontal"
     			android:layout_marginTop="40dp"
+    			android:id="@+id/laySecret7"
     			>
 	      
 				<ImageView
@@ -334,7 +346,8 @@
     				android:layout_gravity="center" 	
     				android:adjustViewBounds="true"	
     				android:clickable="true"
-    				android:background="@drawable/image7"
+    				android:src="@drawable/image7"
+				    android:background="@drawable/roundedimg"
     			    android:layout_marginRight="10dp"
     			    android:layout_weight="0.57" />		
 				
