@@ -4,6 +4,8 @@ import java.io.File;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.concurrent.ExecutionException;
+
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -816,8 +818,15 @@ public class SecretFragment extends Fragment implements AnimationListener {
 	}
 
 	public void getFile(int trigger, String fileName) {
-		int versionCode=CommonUtilities.getCodeVersion(ctx);
+		int versionCode=10;
+		try{
+				versionCode=CommonUtilities.getCodeVersion(ctx);
+		}catch(Exception e)
+		{
+			e.printStackTrace();
+		}
 		try {
+			Log.e("verionCode", ""+versionCode);
 			ZipResourceFile expansionFile = APKExpansionSupport
 					.getAPKExpansionZipFile(ctx, versionCode, 0);
 

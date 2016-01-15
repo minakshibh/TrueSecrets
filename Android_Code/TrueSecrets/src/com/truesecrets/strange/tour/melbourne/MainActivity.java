@@ -696,7 +696,7 @@ public View.OnTouchListener secrettouchListner = new View.OnTouchListener() {
 		public void onResume()
 		{
 	    	super.onResume();
-	    	
+	    	pref.edit().putBoolean("isPurchased", true).commit();
 	    	/*MainActivity.flag = 0;
 			MainActivity.secret.callOnClick();
 				

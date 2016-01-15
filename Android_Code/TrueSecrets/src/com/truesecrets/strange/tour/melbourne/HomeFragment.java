@@ -538,7 +538,7 @@ public class HomeFragment extends Fragment {
 			{
 				if(pref.getBoolean("isPurchased", false)==false)
 				{ 
-					MainActivity.showPaymentDialog();;
+					MainActivity.showPaymentDialog();
 				}
 				else
 				{
@@ -977,7 +977,7 @@ public class HomeFragment extends Fragment {
 	@Override
 	public void onResume() {
 		// TODO Auto-generated method stub
-		pref.edit().putBoolean("isPurchased", true).commit();
+		
 		backgroundColorChange();
 		
 		System.err.println("onResume home fragment");

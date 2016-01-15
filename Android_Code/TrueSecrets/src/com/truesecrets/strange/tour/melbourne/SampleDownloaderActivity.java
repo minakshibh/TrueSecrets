@@ -126,11 +126,11 @@ public class SampleDownloaderActivity extends Activity implements IDownloaderCli
     static final XAPKFile[] xAPKS = {
             new XAPKFile(
                     true, // true signifies a main file
-                   9, // the version of the APK that the file was uploaded
+                   10, // the version of the APK that the file was uploaded
                        // against
-                   	  71619507L
+                   	  71619557L
                    // 75529644L
-//                    70858919L // the length of the file in bytes
+//                    70858919L // 71,619,557the length of the file in bytes
             ),
             /*new XAPKFile(
                     false, // false signifies a patch file
@@ -636,24 +636,28 @@ public class SampleDownloaderActivity extends Activity implements IDownloaderCli
     	final String LAST_RECORDED_VERSION_KEY = "last_recorded_app_version";
 
     	public void onResume() {
+    		super.onResume();
     	  try {
     		SharedPreferences  mPrefs = this.getSharedPreferences("mypref", Context.MODE_APPEND);
     	    PackageInfo packageInfo = getPackageManager().getPackageInfo(getPackageName(), 0);
     	    int currentAppVersion = packageInfo.versionCode;
     	    int lastRecordedAppVersion = mPrefs.getInt(LAST_RECORDED_VERSION_KEY, -1);
     	    if (currentAppVersion > lastRecordedAppVersion) {
+    	    	
+    	    	//[ACTConversionReporter reportWithConversionID:@"1012268842" label:@"4lVHCOqSr2EQqv7X4gM"
+    	    	
     	      AdWordsConversionReporter.reportWithConversionId(
     	          this.getApplicationContext(),
-    	          "1038185027",
-    	          "aqUCHIerhAgQw-SF7wM",
+    	          GoogleAdwordsTrackingId,
+    	          "4lVHCOqSr2EQqv7X4gM",
     	          "0",  // The value of your conversion; can be modified to a transaction-specific value.
     	          true);
     	      SharedPreferences.Editor editor = mPrefs.edit();
     	      editor.putInt(LAST_RECORDED_VERSION_KEY, currentAppVersion);
     	      editor.commit();
     	    }
-    	  } catch (NameNotFoundException e) {
-    	    Log.w("MyApp", e.getMessage());
+    	  } catch (Exception e) {
+    	    e.printStackTrace();
     	  }
     	}
     
