@@ -610,9 +610,12 @@ public class HomeFragment extends Fragment {
 	};
 	
 	
-	public Bitmap getRoundedCornerBitmap(Context context, Bitmap input, int pixels , int w , int h , boolean squareTL, boolean squareTR, boolean squareBL, boolean squareBR  ) {
+	/*public Bitmap getRoundedCornerBitmap(Context context, Bitmap input, int pixels , int w , int h , boolean squareTL, boolean squareTR, boolean squareBL, boolean squareBR  ) {
 
-	    Bitmap output = Bitmap.createBitmap(w, h, Config.ARGB_8888);
+		freeMemory();
+		Bitmap output= null;
+	try{
+	     output = Bitmap.createBitmap(w, h, Config.ARGB_8888);
 	    Canvas canvas = new Canvas(output);
 	    final float densityMultiplier = context.getResources().getDisplayMetrics().density;
 
@@ -646,9 +649,21 @@ public class HomeFragment extends Fragment {
 
 	    paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_IN));
 	    canvas.drawBitmap(input, 0,0, paint);
-
-	    return output;
-	}
+		
+		}
+	catch(Exception e)
+	{
+		System.err.println("Excepction out of memory.");
+		e.printStackTrace();
+		}
+	catch(Error e)
+	{
+		System.err.println("Error out of memory.");
+		e.printStackTrace();
+		}
+	return output;
+		
+	}*/
 	
 	IabHelper.OnIabPurchaseFinishedListener mPurchaseFinishedListener = new IabHelper.OnIabPurchaseFinishedListener() {
 		
@@ -1015,5 +1030,11 @@ public class HomeFragment extends Fragment {
 			});
 			dialog1.show();
 	    }*/
+	
+	public void freeMemory(){       
+	    System.runFinalization();
+	    Runtime.getRuntime().gc();
+	    System.gc();
+	}
 }
 
