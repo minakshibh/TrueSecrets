@@ -78,8 +78,8 @@ public class HomeFragment extends Fragment {
     public static SharedPreferences pref;
     public static boolean welcomeSoundInitialized = false;
     CommonUtilities commonUtilities;
-     String url;
-	 String imei;
+    String url;
+	String imei;
 	String mobile;
     private static final String TAG = "com.truesecrets.purchase.inappbilling";
     IabHelper mHelper;

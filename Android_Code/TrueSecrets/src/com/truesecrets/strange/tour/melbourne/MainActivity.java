@@ -696,7 +696,7 @@ public View.OnTouchListener secrettouchListner = new View.OnTouchListener() {
 		public void onResume()
 		{
 	    	super.onResume();
-	    	pref.edit().putBoolean("isPurchased", true).commit();
+	    	//pref.edit().putBoolean("isPurchased", true).commit();
 	    	/*MainActivity.flag = 0;
 			MainActivity.secret.callOnClick();
 				
@@ -1026,7 +1026,11 @@ public View.OnTouchListener secrettouchListner = new View.OnTouchListener() {
 										}
 									else if(CouponChecker.coupon_productid.equalsIgnoreCase("TS000"))
 									{
-										str_couponcode=CommonUtilities.ITEM_ts950;
+										//str_couponcode=CommonUtilities.ITEM_ts950;
+										 pref.edit().putBoolean("isPurchased", true).commit();
+										 HomeFragment.backgroundColorChange();
+										 gotHomeActivty(ctx);
+										Toast.makeText(ctx, "Application purchase sucessfully..!", Toast.LENGTH_SHORT).show();	
 									}
 									
 									
@@ -1108,7 +1112,7 @@ public View.OnTouchListener secrettouchListner = new View.OnTouchListener() {
 							//Toast.makeText(MainActivity.this, "Item is already purchased",Toast.LENGTH_SHORT).show();
 							pref.edit().putBoolean("isPurchased", true).commit();
 							HomeFragment.backgroundColorChange();
-							 gotHomeActivty(ctx);
+							gotHomeActivty(ctx);
 							//MainActivity.changeTextColor();
 							}
 					 else if (result.isFailure()) {
