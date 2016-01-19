@@ -57,6 +57,8 @@ import android.widget.LinearLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.android.gms.common.data.Freezable;
 import com.google.android.gms.maps.GoogleMap;
 import com.inapppurchase.util.IabHelper;
 import com.inapppurchase.util.IabResult;
@@ -240,7 +242,7 @@ public class MainActivity  extends FragmentActivity implements OnCompletionListe
 			@SuppressLint("NewApi")
 			@Override
 			public void onClick(View v) {	
-			
+				freeMemory();
 				subMenuLayout.setVisibility(View.GONE);				
 					flag = 0;	
 					viewPager.setCurrentItem(0);
@@ -286,7 +288,7 @@ public class MainActivity  extends FragmentActivity implements OnCompletionListe
 	    about.setOnClickListener(new View.OnClickListener() {			
 			@Override
 			public void onClick(View v) {
-				
+				freeMemory();
 				subMenuLayout.setVisibility(View.GONE);				
 					flag = 0;	
 					viewPager.setCurrentItem(8);
@@ -1232,7 +1234,12 @@ public View.OnTouchListener secrettouchListner = new View.OnTouchListener() {
 			super.onStop();
 			stopTimer();
 		}
-	
+		public void freeMemory(){ 
+			System.err.println("free memory");
+		    System.runFinalization();
+		    Runtime.getRuntime().gc();
+		    System.gc();
+		}
 	}
 
 
