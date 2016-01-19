@@ -240,10 +240,11 @@ public class MainActivity  extends FragmentActivity implements OnCompletionListe
 			@SuppressLint("NewApi")
 			@Override
 			public void onClick(View v) {	
+			
 				subMenuLayout.setVisibility(View.GONE);				
 					flag = 0;	
 					viewPager.setCurrentItem(0);
-					
+				
 					/*MainActivity.flag = 0;
 					MainActivity.secret.callOnClick();
 					
@@ -284,11 +285,12 @@ public class MainActivity  extends FragmentActivity implements OnCompletionListe
         });*/
 	    about.setOnClickListener(new View.OnClickListener() {			
 			@Override
-			public void onClick(View v) {	
+			public void onClick(View v) {
+				
 				subMenuLayout.setVisibility(View.GONE);				
 					flag = 0;	
 					viewPager.setCurrentItem(8);
-					
+			
 					/*MainActivity.flag = 0;
 					MainActivity.secret.callOnClick();
 					

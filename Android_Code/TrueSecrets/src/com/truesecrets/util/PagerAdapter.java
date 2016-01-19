@@ -101,6 +101,7 @@ public class PagerAdapter extends FragmentPagerAdapter implements OnPageChangeLi
 	public void onPageSelected(int arg0) {
 		Log.e("page selected","selected "+arg0);
 		
+		
 		for(int i = 0; i< MainActivity.views.size(); i++)
 		{
 			View view = MainActivity.views.get(i);
@@ -187,7 +188,9 @@ public class PagerAdapter extends FragmentPagerAdapter implements OnPageChangeLi
 			MainActivity.flag = 1;
 			MainActivity.secret.performClick();
     	}
-	}
+		}
+		
+	
     
    /* @Override
 	public void destroyItem(ViewGroup collection, int position, Object view) {

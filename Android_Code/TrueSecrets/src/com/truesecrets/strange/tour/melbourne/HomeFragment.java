@@ -4,22 +4,13 @@ import java.io.File;
 import java.io.InputStream;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
 import android.annotation.SuppressLint;
-import android.app.AlertDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.content.res.Resources;
-import android.graphics.Bitmap;
-import android.graphics.Bitmap.Config;
-import android.graphics.Canvas;
 import android.graphics.Color;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffXfermode;
-import android.graphics.Rect;
-import android.graphics.RectF;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Build;
@@ -33,15 +24,8 @@ import android.text.style.ForegroundColorSpan;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.ViewGroup;
-import android.view.ViewGroup.LayoutParams;
-import android.view.Window;
-import android.view.WindowManager;
 import android.view.animation.AlphaAnimation;
-import android.webkit.WebView.FindListener;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -55,12 +39,9 @@ import com.inapppurchase.util.IabHelper;
 import com.inapppurchase.util.IabResult;
 import com.inapppurchase.util.Inventory;
 import com.inapppurchase.util.Purchase;
-import com.truesecrets.strange.tour.melbourne.R;
 import com.truesecrets.strange.tour.melbourne.ObbExpansionsManager.ObbListener;
-
 import com.truesecrets.util.CommonUtilities;
 import com.truesecrets.util.ConnectionDetector;
-import com.truesecrets.util.CouponChecker;
 
 @SuppressLint("ValidFragment")
 public class HomeFragment extends Fragment {	
@@ -71,7 +52,7 @@ public class HomeFragment extends Fragment {
 	static ImageView imgSecret2, imgSecret3,imgSecret4,imgSecret5, imgSecret6, imgSecret7;	
 	public static LinearLayout laySecret1, laySecret2, laySecret4, laySecret5, laySecret6, laySecret7;
 	static public ImageView imgplay;
-    Bitmap bmp;
+//    Bitmap bmp;
     RelativeLayout welcomeLayout;
     ObbExpansionsManager expansionManager;
     File convertedFile;
@@ -656,11 +637,7 @@ public class HomeFragment extends Fragment {
 		System.err.println("Excepction out of memory.");
 		e.printStackTrace();
 		}
-	catch(Error e)
-	{
-		System.err.println("Error out of memory.");
-		e.printStackTrace();
-		}
+	
 	return output;
 		
 	}*/
@@ -748,7 +725,7 @@ public class HomeFragment extends Fragment {
 	    
 	}
 	      
-   }
+   }bitma
 };*/
 	public void playMusic(Uri audioFileId) {
 	    try {	    	

@@ -50,6 +50,7 @@ import com.android.vending.expansion.zipfile.ZipResourceFile;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptor;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
@@ -96,7 +97,9 @@ public class SecretFragment extends Fragment implements AnimationListener {
 
 	AssetManager assetManager;
 	private GoogleMap map;
-
+	
+	//private BitmapDescriptor secret1Des, secret2Des,secret3Des,secret4Des,secret5Des,secret6Des,secret7Des;
+	
 	CommonUtilities commonUtilities;
 
 	private SharedPreferences prefernces;
@@ -117,7 +120,18 @@ public class SecretFragment extends Fragment implements AnimationListener {
 		pref = ctx.getSharedPreferences("mypref", Context.MODE_APPEND);
 		prefernces = context.getSharedPreferences("truesecretPreferences",context.MODE_PRIVATE);
 
-		mHelper = new IabHelper(ctx, CommonUtilities.base64EncodedPublicKey);
+		
+		/*secret1Des=BitmapDescriptorFactory.fromResource(R.drawable.secret__01);
+
+		secret2Des=BitmapDescriptorFactory.fromResource(R.drawable.secret__02);
+		
+		secret3Des=BitmapDescriptorFactory.fromResource(R.drawable.secret__03);
+		secret4Des=BitmapDescriptorFactory.fromResource(R.drawable.secret__04);
+		secret5Des=BitmapDescriptorFactory.fromResource(R.drawable.secret__05);
+		secret6Des=BitmapDescriptorFactory.fromResource(R.drawable.secret__06);
+		secret7Des=BitmapDescriptorFactory.fromResource(R.drawable.secret__07);*/
+
+mHelper = new IabHelper(ctx, CommonUtilities.base64EncodedPublicKey);
 
 		mHelper.startSetup(new IabHelper.OnIabSetupFinishedListener() {
 			public void onIabSetupFinished(IabResult result) {
@@ -132,6 +146,7 @@ public class SecretFragment extends Fragment implements AnimationListener {
 		mHelper.enableDebugLogging(true, TAG);
 
 	}
+	
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -230,6 +245,7 @@ public class SecretFragment extends Fragment implements AnimationListener {
 
 		mapContainer = (LinearLayout) view.findViewById(R.id.mapContainer);
 
+		try{
 		if (position == 1) {
 			secretTitle.setText(R.string.secret1_title);
 			desc_a.setText(R.string.secret_1a);
@@ -335,6 +351,10 @@ public class SecretFragment extends Fragment implements AnimationListener {
 					.getSupportFragmentManager().findFragmentById(
 							R.id.map_secret7);
 			map = fm.getMap();
+		}
+		}catch(Exception e)
+		{
+			e.printStackTrace();
 		}
 
 		try {
@@ -1279,7 +1299,7 @@ public class SecretFragment extends Fragment implements AnimationListener {
 
 	public void drawPath(NavigationDataSet dataSet, GoogleMap map) {
 		int counter = 0;
-
+		freeMemory();
 		try {
 			for (int i = 0; i < dataSet.getPlacemarks().size(); i++) {
 				Placemark placemark = dataSet.getPlacemarks().get(i);
@@ -1310,6 +1330,28 @@ public class SecretFragment extends Fragment implements AnimationListener {
 							placemark.getCoordinates().get(0).longitude);
 					MarkerOptions marker = new MarkerOptions().position(
 							coordinates).title(placemark.getTitle());
+				/*	if (counter == 1) {
+						marker.icon(secret1Des);
+					} 
+					else if (counter == 2) {
+						marker.icon(secret2Des);
+					} 
+					else if (counter == 3) {
+						marker.icon(secret3Des);
+					} 
+					else if (counter == 4) {
+						marker.icon(secret4Des);
+					} 
+					else if (counter == 5) {
+						marker.icon(secret5Des);
+					} 
+					else if (counter == 6) {
+						marker.icon(secret6Des);
+					} 
+					else if (counter == 7) {
+						marker.icon(secret7Des);
+					}*/
+					
 					if (counter == 1) {
 						marker.icon(BitmapDescriptorFactory
 								.fromResource(R.drawable.secret__01));
@@ -1837,5 +1879,15 @@ public class SecretFragment extends Fragment implements AnimationListener {
 	public void onAnimationStart(Animation animation) {
 		// Animation started
 	}
-	
+	@Override
+	public void onResume() {
+		freeMemory();
+		super.onResume();
+	}
+	public void freeMemory(){ 
+		System.err.println("free memory");
+	    System.runFinalization();
+	    Runtime.getRuntime().gc();
+	    System.gc();
+	}
 }
