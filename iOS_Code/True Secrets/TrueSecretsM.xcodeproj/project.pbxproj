@@ -243,6 +243,12 @@
 		D96DA3B41BFB547F00930AC4 /* libGoogleConversionTracking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D96DA3B21BFB547F00930AC4 /* libGoogleConversionTracking.a */; };
 		D96DA3B51BFB547F00930AC4 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = D96DA3B31BFB547F00930AC4 /* README.txt */; };
 		D96DA3B91BFB569200930AC4 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D96DA3B81BFB569200930AC4 /* AdSupport.framework */; };
+		D9B162FB1C50D7E1000A9DBB /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9B162FA1C50D7E1000A9DBB /* Security.framework */; };
+		D9B163021C50D9D3000A9DBB /* navigation.png in Resources */ = {isa = PBXBuildFile; fileRef = D9B162FD1C50D9D3000A9DBB /* navigation.png */; };
+		D9B163031C50D9D3000A9DBB /* navigation@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D9B162FE1C50D9D3000A9DBB /* navigation@2x.png */; };
+		D9B163041C50D9D3000A9DBB /* navigation@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = D9B162FF1C50D9D3000A9DBB /* navigation@2x~ipad.png */; };
+		D9B163051C50D9D3000A9DBB /* navigation@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D9B163001C50D9D3000A9DBB /* navigation@3x.png */; };
+		D9B163061C50D9D3000A9DBB /* navigation~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = D9B163011C50D9D3000A9DBB /* navigation~ipad.png */; };
 		D9E283C61B733298004045A0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9E283C51B733298004045A0 /* Images.xcassets */; };
 		D9E636811B68A19E004803CC /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = D9E636801B68A19E004803CC /* MBProgressHUD.m */; };
 		F9E2D2D21B9EB0DB000CCF43 /* cancel-button-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = F9E2D2D11B9EB0DB000CCF43 /* cancel-button-icon.png */; };
@@ -537,6 +543,12 @@
 		D96DA3B61BFB548700930AC4 /* DCTReporter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DCTReporter.h; sourceTree = "<group>"; };
 		D96DA3B71BFB549100930AC4 /* GoogleConversionPing.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GoogleConversionPing.h; sourceTree = "<group>"; };
 		D96DA3B81BFB569200930AC4 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		D9B162FA1C50D7E1000A9DBB /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		D9B162FD1C50D9D3000A9DBB /* navigation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navigation.png; sourceTree = "<group>"; };
+		D9B162FE1C50D9D3000A9DBB /* navigation@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navigation@2x.png"; sourceTree = "<group>"; };
+		D9B162FF1C50D9D3000A9DBB /* navigation@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navigation@2x~ipad.png"; sourceTree = "<group>"; };
+		D9B163001C50D9D3000A9DBB /* navigation@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navigation@3x.png"; sourceTree = "<group>"; };
+		D9B163011C50D9D3000A9DBB /* navigation~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navigation~ipad.png"; sourceTree = "<group>"; };
 		D9E283C51B733298004045A0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = TrueSecretsM/Images.xcassets; sourceTree = "<group>"; };
 		D9E6367F1B68A19E004803CC /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		D9E636801B68A19E004803CC /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
@@ -548,6 +560,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9B162FB1C50D7E1000A9DBB /* Security.framework in Frameworks */,
 				D96DA3B91BFB569200930AC4 /* AdSupport.framework in Frameworks */,
 				97A46E9B1992030400FEF493 /* StoreKit.framework in Frameworks */,
 				979D966417D578B500AAA054 /* libz.dylib in Frameworks */,
@@ -605,6 +618,7 @@
 		8E2B41F4174CD852003979AA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D9B162FA1C50D7E1000A9DBB /* Security.framework */,
 				D96DA3B81BFB569200930AC4 /* AdSupport.framework */,
 				97A46E9A1992030400FEF493 /* StoreKit.framework */,
 				979D966317D578B500AAA054 /* libz.dylib */,
@@ -698,6 +712,7 @@
 		8E2B41FC174CD852003979AA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D9B162FC1C50D9BC000A9DBB /* imagesss */,
 				97D70743179D1B5600D1FB2E /* secret_1.png */,
 				8ED46CBB1759E9E900F236A2 /* WHTextActivity */,
 				8EDB0F0D175C93EE002679D8 /* WhMailActivityItem */,
@@ -1088,6 +1103,18 @@
 			name = DoubleClick;
 			sourceTree = "<group>";
 		};
+		D9B162FC1C50D9BC000A9DBB /* imagesss */ = {
+			isa = PBXGroup;
+			children = (
+				D9B162FD1C50D9D3000A9DBB /* navigation.png */,
+				D9B162FE1C50D9D3000A9DBB /* navigation@2x.png */,
+				D9B162FF1C50D9D3000A9DBB /* navigation@2x~ipad.png */,
+				D9B163001C50D9D3000A9DBB /* navigation@3x.png */,
+				D9B163011C50D9D3000A9DBB /* navigation~ipad.png */,
+			);
+			name = imagesss;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1119,7 +1146,7 @@
 				ORGANIZATIONNAME = whatwasthat;
 				TargetAttributes = {
 					8E2B41F1174CD852003979AA = {
-						DevelopmentTeam = Q92246845N;
+						DevelopmentTeam = T5DY39F2BR;
 						SystemCapabilities = {
 							com.apple.iCloud = {
 								enabled = 0;
@@ -1193,6 +1220,8 @@
 				8E968A5B17546CCC006B3277 /* police_strike_master.mp3 in Resources */,
 				8E968A5C17546CCC006B3277 /* specials_bg.mp3 in Resources */,
 				8E968A5D17546CCC006B3277 /* tasty_bg.mp3 in Resources */,
+				D9B163031C50D9D3000A9DBB /* navigation@2x.png in Resources */,
+				D9B163051C50D9D3000A9DBB /* navigation@3x.png in Resources */,
 				8E968A711754C675006B3277 /* fourSquareView.xib in Resources */,
 				8E968A761754C6A2006B3277 /* googleplusShareView.xib in Resources */,
 				8E968A7B1754C6BB006B3277 /* shareView.xib in Resources */,
@@ -1209,6 +1238,7 @@
 				8ED46CC61759E9E900F236A2 /* textActivity@2x.png in Resources */,
 				8ED46CC71759E9E900F236A2 /* textActivity@2x~ipad.png in Resources */,
 				8ED46CC81759E9E900F236A2 /* textActivity~ipad.png in Resources */,
+				D9B163021C50D9D3000A9DBB /* navigation.png in Resources */,
 				8E6B3D621759F38100C3F923 /* mailActivity.png in Resources */,
 				8E8CE078175F174500DA927F /* map_pin.png in Resources */,
 				97DE99291799064900F43723 /* Secret_5_Bonus.mp3 in Resources */,
@@ -1233,6 +1263,7 @@
 				97DE994A1799548B00F43723 /* Secret_2_Background.mp3 in Resources */,
 				97DE994B1799548B00F43723 /* Secret_3_Background.mp3 in Resources */,
 				97DE994C1799548B00F43723 /* Secret_4_Background.mp3 in Resources */,
+				D9B163061C50D9D3000A9DBB /* navigation~ipad.png in Resources */,
 				97D70744179D1B5600D1FB2E /* secret_1.png in Resources */,
 				97D70746179D4B5000D1FB2E /* Thanks-track.mp3 in Resources */,
 				D9E283C61B733298004045A0 /* Images.xcassets in Resources */,
@@ -1302,6 +1333,7 @@
 				97E171D517E11377002F08BA /* pause.png in Resources */,
 				97FD6AB017E39E75008C80C4 /* WelcomeViewController_ipad.xib in Resources */,
 				97C551BB17E7C2630049A648 /* WelcomeViewController_retina.xib in Resources */,
+				D9B163041C50D9D3000A9DBB /* navigation@2x~ipad.png in Resources */,
 				97C551BD17E7C2E40049A648 /* WelcomeViewController_iPhone.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1434,8 +1466,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Craig Lambie (CA896K78V6)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Craig Lambie (CA896K78V6)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Rocky Uppal (3R7VB3H8QT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Rocky Uppal (3R7VB3H8QT)";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_BITCODE = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1451,8 +1483,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "280c9ad5-b4ec-4ae9-8604-b5217e852392";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "280c9ad5-b4ec-4ae9-8604-b5217e852392";
+				PROVISIONING_PROFILE = "a84efc6b-242c-473b-ae6e-71319c82098b";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "a84efc6b-242c-473b-ae6e-71319c82098b";
 				SDKROOT = iphoneos;
 				VALID_ARCHS = "armv7s armv7 arm64";
 			};
@@ -1470,8 +1502,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: What Was That Pty Ltd (Q92246845N)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: What Was That Pty Ltd (Q92246845N)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Rocky Uppal (T5DY39F2BR)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Rocky Uppal (T5DY39F2BR)";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_BITCODE = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1481,8 +1513,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "b9d6b956-0a60-482c-a8cf-12a250242dc9";
-				"PROVISIONING_PROFILE[sdk=*]" = "b9d6b956-0a60-482c-a8cf-12a250242dc9";
+				PROVISIONING_PROFILE = "a633c6ce-ea4f-4e62-a915-6c31368a197e";
+				"PROVISIONING_PROFILE[sdk=*]" = "a633c6ce-ea4f-4e62-a915-6c31368a197e";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 				VALID_ARCHS = "armv7s armv7 arm64";
@@ -1494,8 +1526,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Craig Lambie (CA896K78V6)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Craig Lambie (CA896K78V6)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1514,8 +1546,8 @@
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = TrueSecretsM;
-				PROVISIONING_PROFILE = "280c9ad5-b4ec-4ae9-8604-b5217e852392";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "280c9ad5-b4ec-4ae9-8604-b5217e852392";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "a84efc6b-242c-473b-ae6e-71319c82098b";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "armv7s arm64 armv7 x86_64";
 				WRAPPER_EXTENSION = app;
@@ -1527,8 +1559,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: What Was That Pty Ltd (Q92246845N)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: What Was That Pty Ltd (Q92246845N)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1547,8 +1579,8 @@
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = TrueSecretsM;
-				PROVISIONING_PROFILE = "b9d6b956-0a60-482c-a8cf-12a250242dc9";
-				"PROVISIONING_PROFILE[sdk=*]" = "b9d6b956-0a60-482c-a8cf-12a250242dc9";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=*]" = "a633c6ce-ea4f-4e62-a915-6c31368a197e";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "armv7s arm64 armv7 x86_64";
 				WRAPPER_EXTENSION = app;
@@ -1567,8 +1599,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: What Was That Pty Ltd (Q92246845N)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: What Was That Pty Ltd (Q92246845N)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Rocky Uppal (T5DY39F2BR)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Rocky Uppal (T5DY39F2BR)";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_BITCODE = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1578,8 +1610,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "b9d6b956-0a60-482c-a8cf-12a250242dc9";
-				"PROVISIONING_PROFILE[sdk=*]" = "b9d6b956-0a60-482c-a8cf-12a250242dc9";
+				PROVISIONING_PROFILE = "a633c6ce-ea4f-4e62-a915-6c31368a197e";
+				"PROVISIONING_PROFILE[sdk=*]" = "a633c6ce-ea4f-4e62-a915-6c31368a197e";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 				VALID_ARCHS = "armv7s armv7 arm64";
@@ -1591,8 +1623,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: What Was That Pty Ltd (Q92246845N)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: What Was That Pty Ltd (Q92246845N)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1611,8 +1643,8 @@
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = TrueSecretsM;
-				PROVISIONING_PROFILE = "b9d6b956-0a60-482c-a8cf-12a250242dc9";
-				"PROVISIONING_PROFILE[sdk=*]" = "b9d6b956-0a60-482c-a8cf-12a250242dc9";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=*]" = "a633c6ce-ea4f-4e62-a915-6c31368a197e";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "armv7s arm64 armv7 x86_64";
 				WRAPPER_EXTENSION = app;

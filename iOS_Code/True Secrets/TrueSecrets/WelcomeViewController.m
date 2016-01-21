@@ -42,6 +42,7 @@
 }
 - (void)viewDidLoad
 {
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     
     indicator = [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     indicator.frame = CGRectMake(0.0, 0.0, 80.0, 80.0);
@@ -66,7 +67,7 @@
     
     
     NSUserDefaults *user_default = [NSUserDefaults standardUserDefaults];
-    //[user_default setObject:@"Purchased" forKey:@"Products"];
+   // [user_default setObject:@"Purchased" forKey:@"Products"];
    // [user_default setObject:@"Purchased123" forKey:@"Products"];
     check_status = [NSString stringWithFormat:@"%@",[user_default valueForKey:@"Products"]];
     //
@@ -100,9 +101,18 @@
         //[scrollView setContentOffset:scrollView.contentOffset animated:YES];
         
         
-        backgroundImg = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 768, 1150)];
-        backgroundImg.image = [UIImage imageNamed:@"bgfinal.png"];
-        [scrollView addSubview:backgroundImg];
+//        backgroundImg = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 768, 1150)];
+//        backgroundImg.image = [UIImage imageNamed:@"bgfinal.png"];
+//        [scrollView addSubview:backgroundImg];
+        
+        
+        UIView *imageViewTop = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 768, 30)];
+        backgroundImgNew = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 768, 30)];
+        backgroundImgNew.image = [UIImage imageNamed:@"navigation.png"];
+        [imageViewTop addSubview:backgroundImgNew];
+        imageViewTop.backgroundColor = [UIColor whiteColor];
+        [scrollView addSubview:imageViewTop];
+        
         
         
         logoImage = [[UIImageView alloc] initWithFrame:CGRectMake(250, 30, 250, 50)];
@@ -479,10 +489,17 @@
 	//[scrollView setContentOffset:scrollView.contentOffset animated:YES];
     
   
-    backgroundImg = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 900)];
-    backgroundImg.image = [UIImage imageNamed:@"bgfinal.png"];
-    [scrollView addSubview:backgroundImg];
+//    backgroundImg = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 900)];
+//    backgroundImg.image = [UIImage imageNamed:@"bgfinal.png"];
+//    [scrollView addSubview:backgroundImg];
   
+        
+    UIView *imageViewTop = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 320, 30)];
+    backgroundImgNew = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 30)];
+    backgroundImgNew.image = [UIImage imageNamed:@"navigation.png"];
+    [imageViewTop addSubview:backgroundImgNew];
+    imageViewTop.backgroundColor = [UIColor whiteColor];
+    [scrollView addSubview:imageViewTop];
    
     logoImage = [[UIImageView alloc] initWithFrame:CGRectMake(28, 30, 250, 50)];
     logoImage.image = [UIImage imageNamed:@"logo1.png"];

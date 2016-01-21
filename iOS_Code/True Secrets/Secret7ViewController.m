@@ -67,9 +67,15 @@ CustomCuponViewController *customViewObj;
         [self.view addGestureRecognizer:tap];
         [scrollView setContentSize: CGSizeMake(768 , 1024)];
         
-        UIImageView *backgroundImg = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 768 ,1200)];
-        backgroundImg.image = [UIImage imageNamed:@"bgfinal.png"];
-        [scrollView addSubview:backgroundImg];
+//        UIImageView *backgroundImg = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 768 ,1200)];
+//        backgroundImg.image = [UIImage imageNamed:@"bgfinal.png"];
+//        [scrollView addSubview:backgroundImg];
+        UIView *imageViewTop = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 768, 30)];
+        UIImageView* backgroundImgNew = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 768, 30)];
+        backgroundImgNew.image = [UIImage imageNamed:@"navigation.png"];
+        [imageViewTop addSubview:backgroundImgNew];
+        imageViewTop.backgroundColor = [UIColor whiteColor];
+        [scrollView addSubview:imageViewTop];
         
         UIImageView *logoImage = [[UIImageView alloc] initWithFrame:CGRectMake(250, 30, 250, 50)];
         logoImage.image = [UIImage imageNamed:@"logo1.png"];
@@ -427,10 +433,16 @@ CustomCuponViewController *customViewObj;
     [self.view addGestureRecognizer:tap];
     [scrollView setContentSize: CGSizeMake(320 , 900)];
     
-    UIImageView *backgroundImg = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 900)];
-    backgroundImg.image = [UIImage imageNamed:@"bgfinal.png"];
-    [scrollView addSubview:backgroundImg];
-    
+//    UIImageView *backgroundImg = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 900)];
+//    backgroundImg.image = [UIImage imageNamed:@"bgfinal.png"];
+//    [scrollView addSubview:backgroundImg];
+        UIView *imageViewTop = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 320, 30)];
+        UIImageView* backgroundImgNew = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 30)];
+        backgroundImgNew.image = [UIImage imageNamed:@"navigation.png"];
+        [imageViewTop addSubview:backgroundImgNew];
+        imageViewTop.backgroundColor = [UIColor whiteColor];
+        [scrollView addSubview:imageViewTop];
+        
     UIImageView *logoImage = [[UIImageView alloc] initWithFrame:CGRectMake(28, 30, 250, 50)];
     logoImage.image = [UIImage imageNamed:@"logo1.png"];
     [scrollView addSubview:logoImage];

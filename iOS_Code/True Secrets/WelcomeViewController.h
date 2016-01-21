@@ -26,7 +26,7 @@
 {
     CustomCuponViewController *customViewObj;
     UIScrollView *scrollView;
-    UIImageView *backgroundImg;
+    UIImageView *backgroundImg,*backgroundImgNew;
     UIImageView *logoImage;
     UIButton *welcomePlayImage;
     AVAudioPlayer *welcomeAudioPlayer;
