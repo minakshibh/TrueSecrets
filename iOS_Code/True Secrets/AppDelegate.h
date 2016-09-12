@@ -21,6 +21,7 @@
     NSString *productCode;
     SKProductsRequest *productRequest;
      NSArray *validProducts;
+    CLLocationManager   * locationManager;
 }
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) WelcomeViewController *welcome;
